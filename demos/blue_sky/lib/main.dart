@@ -4,6 +4,10 @@ void main() {
   runApp(MyApp());
 }
 
+printMsg(name, [age]){
+  print("hi $name, age=$age");
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override

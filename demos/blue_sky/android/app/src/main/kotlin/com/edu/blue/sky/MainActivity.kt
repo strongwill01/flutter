@@ -1,4 +1,4 @@
-package com.edu.blue_sky
+package com.edu.blue.sky
 
 import io.flutter.embedding.android.FlutterActivity
 
