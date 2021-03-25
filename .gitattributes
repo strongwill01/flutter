@@ -1,0 +1,5 @@
+*.dart linguist-language=dart
+*.javascript linguist-language=javascript
+*.java linguist-language=java
+*.Objective-C linguist-language=Objective-C
+*.swift linguist-language=swift

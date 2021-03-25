@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
-  // printMsg("zhangsan");
 }
 
 printMsg(name, [age]){
