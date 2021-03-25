@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,// 是否显示`debug`标签
+      debugShowCheckedModeBanner: false,// 是否显示`debug`标签
       title: 'Blue Sky',
       theme: ThemeData(
         // This is the theme of your application.
