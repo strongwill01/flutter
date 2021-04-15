@@ -5,17 +5,12 @@ import 'package:flutter/material.dart';
 class MyGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "listview dynamic",
-      home: Scaffold(
-        appBar: new AppBar(
-          title: Text("listview widget"),
-        ),
-        body: GridView(
+    return GridView(
+          padding: EdgeInsets.all(8.0),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: 3,
             mainAxisSpacing: 6,
-            crossAxisSpacing: 5,
+            crossAxisSpacing: 10,
             childAspectRatio: 0.75,
           ),
           children: [
@@ -56,9 +51,7 @@ class MyGridView extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ],
-        ),
-      ),
-    );
+        );
   }
 }
 

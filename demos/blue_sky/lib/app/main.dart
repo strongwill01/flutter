@@ -2,6 +2,9 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import './drawer_demo.dart';
+import './bottom_navigation_bar_demo.dart';
+import '../study/my_listview.dart';
+import '../study/my_gridview.dart';
 
 class App extends StatelessWidget {
   @override
@@ -19,12 +22,14 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
+
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
         length: 3,
         child: Scaffold(
-          backgroundColor: Colors.yellow,
+          backgroundColor: Colors.grey[300],
           appBar: AppBar(
             backgroundColor: Colors.lightBlue,
             title: Text('TOM'),
@@ -58,16 +63,12 @@ class Home extends StatelessWidget {
             ),
           ),
           body: TabBarView(children: [
-            Icon(Icons.local_activity, size: 128.0, color: Colors.black12),
+            MyGridView(),
             Icon(Icons.local_airport, size: 128.0, color: Colors.black12),
             Icon(Icons.local_atm, size: 128.0, color: Colors.black12),
           ]),
           drawer: DrawerDemo(),
-          bottomNavigationBar: BottomNavigationBar(items: [
-            BottomNavigationBarItem(icon: Icon(Icons.explore),title: Text('explore')),
-            BottomNavigationBarItem(icon: Icon(Icons.search),title: Text('a')),
-            BottomNavigationBarItem(icon: Icon(Icons.person),title: Text('person')),
-          ],),
+          bottomNavigationBar: BottomNavigationBarDemo(),
         ));
   }
 }
