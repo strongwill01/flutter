@@ -1,10 +1,12 @@
 import 'dart:html';
 
+import 'package:blue_sky/study_hi/layout_demo.dart';
+import 'package:blue_sky/study_hi/view_demo.dart';
 import 'package:flutter/material.dart';
 import './drawer_demo.dart';
 import './bottom_navigation_bar_demo.dart';
-import '../study/my_listview.dart';
 import '../study/my_gridview.dart';
+import '../study_hi/basic_demo.dart';
 
 class App extends StatelessWidget {
   @override
@@ -22,17 +24,22 @@ class App extends StatelessWidget {
 }
 
 class Home extends StatelessWidget {
-
+  var _tabs = [
+    ViewDemo(),
+    LayoutDemo(),
+    BasicDemo(),
+    MyGridView(),
+  ];
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-        length: 3,
+        length: 4,
         child: Scaffold(
           backgroundColor: Colors.grey[300],
           appBar: AppBar(
             backgroundColor: Colors.lightBlue,
-            title: Text('TOM'),
+            title: Text('APP'),
             actions: [
               IconButton(
                 icon: Icon(Icons.search),
@@ -59,14 +66,14 @@ class Home extends StatelessWidget {
                 Tab(icon: Icon(Icons.local_activity)),
                 Tab(icon: Icon(Icons.local_airport)),
                 Tab(icon: Icon(Icons.local_atm)),
+                Tab(icon: Icon(Icons.queue_music)),
               ],
             ),
           ),
-          body: TabBarView(children: [
-            MyGridView(),
-            Icon(Icons.local_airport, size: 128.0, color: Colors.black12),
-            Icon(Icons.local_atm, size: 128.0, color: Colors.black12),
-          ]),
+          body: TabBarView(
+            // controller: TabController(length: 3, vsync: null, initialIndex: 1),
+            children: _tabs,
+          ),
           drawer: DrawerDemo(),
           bottomNavigationBar: BottomNavigationBarDemo(),
         ));
